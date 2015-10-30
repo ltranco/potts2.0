@@ -20,4 +20,5 @@ from potts.views import DashboardView
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', DashboardView.as_view()),
+    url(r'^dashboard/', DashboardView.as_view()),
 ]

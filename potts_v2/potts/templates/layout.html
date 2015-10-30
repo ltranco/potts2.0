@@ -4,12 +4,39 @@
         <title>Potts</title>
         <link type="text/css" rel="stylesheet" href="/static/style.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="/static/materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="/static/materialize/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                console.log("hi")
+                $(".button-collapse").sideNav();
+                console.log($(".button-collapse"));
+                console.log("hi)");
+            });
+        </script>
     </head>
 
     <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Logo</a>
+                <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="{{ dashboard_active }}"><a href="/dashboard">Dashboard</a></li>
+                    <li class="{{ cashflow_active }}"><a href="/cashflow">Cash Flow</a></li>
+                    <li class="{{ projection_active }}"><a href="/projection">Projection</a></li>
+                </ul>
+                <ul class="side-nav">
+                    <li class="{{ test }}"><a href="/">Dashboard</a></li>
+                    <li><a href="/cashflow">Cash Flow</a></li>
+                    <li><a href="/projection">Projection</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="container">
-            {% block content %}
+            {% block dashboard %}
             {% endblock %}
         </div>
     </body>
